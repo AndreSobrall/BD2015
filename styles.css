@@ -1,10 +1,11 @@
 
 body {
-	text-align: center;
+	
 	background-color: powderblue;
 }
 
-h1 { 
+h1 {
+    text-align: center; 
 	color: #4CAF50; 
 }
 
@@ -20,4 +21,8 @@ button {
     font-size: 16px;
     margin: 4px 2px;
     cursor: pointer;
+}
+
+.div {
+    text-align: center; 
 }
