@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>	
-		<link rel="stylesheet" href="styles.css">
+		<link rel="stylesheet" href="css/styles.css">
 		<meta charset="UTF-8">
 		<title> BD 2015/2016 </title> 
 </head>
