@@ -19,7 +19,7 @@ try {
     $connection = new PDO("mysql:host=$host; dbname=$dbname", $username, $password);
     // set the PDO error mode to exception
     $connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    echo "Connected successfully";
+    // echo "Connected successfully";
 
 } catch(PDOException $e) {
     echo "Connection failed: " . $e->getMessage();
@@ -51,6 +51,11 @@ function printQueryResults($info, $result) {
     echo("</table>\n");
 }
 
+/*  how to print results:
+    $num = $result->rowCount();
+    echo("<p>$num records retrieved:</p>\n");
+    $info=array("email","password");
+    printQueryResults($info,$result); */
 
 // Array que guarda urls e paths 
 $config = array(
