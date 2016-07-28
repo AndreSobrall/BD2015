@@ -8,11 +8,13 @@
     you'll only need to update it here.
 */
 
+// Credenciais da base de dados
 $dbname = "bd2015";
 $username = "root";
 $password = "root";
 $host = "localhost";
 
+// Ligacao a base de dados
 try {
     $connection = new PDO("mysql:host=$host; dbname=$dbname", $username, $password);
     // set the PDO error mode to exception
@@ -26,7 +28,31 @@ try {
 // Assegura que dados de texto da base de dados, sao codificados em utf-8.
 $sql = "SET NAMES 'utf8'";
 $connection->query($sql);
- 
+
+
+// Funcao de impressao de resultados
+function printQueryResults($info, $result) {
+    echo("<table border=\"1\">\n");
+    echo("<tr>");
+    for($i = 0; $i < sizeof($info); $i++) {
+        echo("<th>" . $info[$i] . "</th>");
+    }
+    echo("</tr>\n");
+
+    foreach($result as $row)
+    {   
+        echo("<tr>");
+        for($i = 0; $i < sizeof($info); $i++) {
+            echo("<td>" . $row[$info[$i]] . "</td>");
+        }
+        echo("</tr>");
+    }
+
+    echo("</table>\n");
+}
+
+
+// Array que guarda urls e paths 
 $config = array(
     "urls" => array(
         "baseUrl" => "http://localhost:8888"

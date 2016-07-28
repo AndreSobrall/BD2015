@@ -32,22 +32,8 @@
 		// print result
 		$num = $result->rowCount();
 		echo("<p>$num records retrieved:</p>\n");
-		echo("<table border=\"1\">\n");
-		echo("<tr><th>userid</th><th>email</th><th>nome</th><th>password</th></tr>\n");
-		
-		foreach($result as $row)
-		{
-			echo("<tr><td>");
-			echo($row["userid"]);
-			echo("</td><td>");
-			echo($row["email"]);
-			echo("</td><td>");
-			echo($row["nome"]);
-			echo("</td><td>");
-			echo($row["password"]);
-			echo("</td></tr>\n");
-		}
-		echo("</table>\n");
+		$info=array("userid","nome");
+		printQueryResults($info,$result);
 		
 		// close connection. 	
 	    $connection = null;
