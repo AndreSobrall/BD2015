@@ -17,14 +17,15 @@ try {
     $connection = new PDO("mysql:host=$host; dbname=$dbname", $username, $password);
     // set the PDO error mode to exception
     $connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    echo "Connected successfully"; 
-    }
-catch(PDOException $e)
-    {
-    echo "Connection failed: " . $e->getMessage();
-    }
+    echo "Connected successfully";
 
-//phpinfo();
+} catch(PDOException $e) {
+    echo "Connection failed: " . $e->getMessage();
+}
+
+// Assegura que dados de texto da base de dados, sao codificados em utf-8.
+$sql = "SET NAMES 'utf8'";
+$connection->query($sql);
  
 $config = array(
     "urls" => array(
@@ -40,8 +41,6 @@ $config = array(
     )
 );
 
-
- 
 /*
     Error reporting.
 */

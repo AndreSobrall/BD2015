@@ -21,7 +21,7 @@
 	<?php
 		// load config file
 	    require_once($_SERVER["DOCUMENT_ROOT"] . "/resources/config.php");
-	    
+ 
 	    // build query
 	    $sql = "SELECT * FROM utilizador";
 
@@ -32,20 +32,22 @@
 		// print result
 		$num = $result->rowCount();
 		echo("<p>$num records retrieved:</p>\n");
-		/*echo("<table border=\"1\">\n");
-		echo("<tr><td>account_number</td><td>branch_name</td><td>balance</td></tr>\n");
-
+		echo("<table border=\"1\">\n");
+		echo("<tr><th>userid</th><th>email</th><th>nome</th><th>password</th></tr>\n");
+		
 		foreach($result as $row)
 		{
-			echo("<tr><§td>");
-			echo($row["account_number"]);
+			echo("<tr><td>");
+			echo($row["userid"]);
 			echo("</td><td>");
-			echo($row["branch_name"]);
+			echo($row["email"]);
 			echo("</td><td>");
-			echo($row["balance"]);
+			echo($row["nome"]);
+			echo("</td><td>");
+			echo($row["password"]);
 			echo("</td></tr>\n");
 		}
-		echo("</table>\n");*/
+		echo("</table>\n");
 		
 		// close connection. 	
 	    $connection = null;
